@@ -44,7 +44,9 @@ Iesniegumos bieži ir nepareizi personas kodi. Sistēmai jāpārbauda, vai perso
 | Kāda ir kļūdas atbilde? | 400 pēc līguma (API contract): `INVALID_FORMAT`, vai `REQUIRED`, ja lauka nav. Kļūda atbilst līguma kļūdu shēmai. | Produkta īpašnieks, 2026-09-30 |
 | Vai kļūdas ziņojumā drīkst atkārtot ievadīto kodu? | Nē. Ne atbildē, ne žurnālā. Tikai lauka nosaukums un kļūdas kods. | Produkta īpašnieks, 2026-09-30 |
 | Vai mainās atbildes shēma? | Nē. | Produkta īpašnieks, 2026-09-30 |
-
+|Ja kods nav aizpildīts (ir null): izdot kļūdu 400, ka šis lauks ir obligāts (REQUIRED)| Jā | Produkta īpašnieks, 2026-10-05 |
+|Ja ir atstarpe koda vidū: izdot paziņojumu 400 INVALID_FORMAT.| Jā | Produkta īpašnieks, 2026-10-05 |
+|Ja kods ir kā JSON skaitlis, piemēram, 32000000001 bez pēdiņām: tad 400 INVALID_FORMAT.| Jā | Produkta īpašnieks, 2026-10-05 |
 ## Ārpus tvēruma (out of scope)
 
 - Kontrolcipara un dzimšanas datuma pārbaude
